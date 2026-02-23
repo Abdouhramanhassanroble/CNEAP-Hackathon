@@ -5,7 +5,7 @@ import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
-delete (L.Icon.Default.prototype as any)._getIconUrl;
+delete (L.Icon.Default.prototype as Record<string, unknown>)._getIconUrl;
 L.Icon.Default.mergeOptions({ iconRetinaUrl: markerIcon2x, iconUrl: markerIcon, shadowUrl: markerShadow });
 
 const etablissements = [
@@ -124,8 +124,16 @@ export const TerritoireMap = ({ height = 520, className = '', showControls = tru
     const map = mapInstanceRef.current;
     const l = layersRef.current;
     if (!map || !l) return;
-    showHeat ? (map.hasLayer(l.heat) || map.addLayer(l.heat)) : map.removeLayer(l.heat);
-    showZones ? (map.hasLayer(l.zones) || map.addLayer(l.zones)) : map.removeLayer(l.zones);
+    if (showHeat) {
+      if (!map.hasLayer(l.heat)) map.addLayer(l.heat);
+    } else {
+      map.removeLayer(l.heat);
+    }
+    if (showZones) {
+      if (!map.hasLayer(l.zones)) map.addLayer(l.zones);
+    } else {
+      map.removeLayer(l.zones);
+    }
   }, [showHeat, showZones]);
 
   return (
