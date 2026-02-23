@@ -1,0 +1,36 @@
+[
+  {
+    "etablissementId": "campus-orion",
+    "etablissementNom": "Campus L'Orion",
+    "parAge": [
+      { "age": 14, "effectif": 210 },
+      { "age": 15, "effectif": 210 },
+      { "age": 16, "effectif": 290 },
+      { "age": 17, "effectif": 290 },
+      { "age": 18, "effectif": 310 },
+      { "age": 19, "effectif": 310 },
+      { "age": 20, "effectif": 190 },
+      { "age": 21, "effectif": 190 },
+      { "age": 22, "effectif": 155 },
+      { "age": 23, "effectif": 155 }
+    ],
+    "total14_23": 2310
+  },
+  {
+    "etablissementId": "lycee-etablieres",
+    "etablissementNom": "Lycée des Établières",
+    "parAge": [
+      { "age": 14, "effectif": 260 },
+      { "age": 15, "effectif": 260 },
+      { "age": 16, "effectif": 340 },
+      { "age": 17, "effectif": 340 },
+      { "age": 18, "effectif": 360 },
+      { "age": 19, "effectif": 360 },
+      { "age": 20, "effectif": 210 },
+      { "age": 21, "effectif": 210 },
+      { "age": 22, "effectif": 130 },
+      { "age": 23, "effectif": 130 }
+    ],
+    "total14_23": 2600
+  }
+]
