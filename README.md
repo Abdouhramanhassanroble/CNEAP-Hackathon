@@ -64,6 +64,11 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
+### CI/CD et production Vercel
+
+- **CI (GitHub Actions)** : à chaque push ou PR sur `main`/`master`, le workflow `.github/workflows/ci.yml` exécute `npm ci`, `npm run lint`, `npm run build` et `npm run test`. Si tout passe, la branche est prête pour la prod.
+- **Production Vercel** : connecte ce dépôt à [Vercel](https://vercel.com). Les déploiements se lancent automatiquement sur chaque push vers la branche de production. La config `vercel.json` indique à Vercel d’utiliser `npm run build` et le dossier `dist` (projet Vite).
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!
