@@ -1,47 +1,73 @@
-# Carte des lycées — Visualisation & indicateurs
+# Welcome to your Lovable project
 
-Application web **front-end uniquement** pour visualiser et analyser des établissements scolaires sur une carte interactive (démo hackathon).
+## Project info
 
-## Fonctionnalités
+**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
-- **Carte interactive** (React Leaflet) centrée sur la France avec marqueurs pour :
-  - Campus L'Orion (Évron)
-  - Lycée des Établières (La Roche-sur-Yon)
-- **Filtre par filière** : Général, Technologique, Professionnel, Agricole — filtre dynamique sans rechargement.
-- **Indicateurs par établissement** (Recharts) : taux d'insertion, recherche d'emploi, poursuite d'études, réussite au bac.
-- **Analyse de la population locale** : focus 14–23 ans (bar chart par tranche d'âge).
+## How can I edit this code?
 
-## Stack
+There are several ways of editing your application.
 
-- Next.js 14 (App Router) + TypeScript
-- Tailwind CSS
-- React Leaflet (carte)
-- Recharts (graphiques)
-- Données mockées en JSON local
+**Use Lovable**
 
-## Démarrage
+Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
-```bash
-npm install
+Changes made via Lovable will be committed automatically to this repo.
+
+**Use your preferred IDE**
+
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-Ouvrir [http://localhost:3000](http://localhost:3000).
+**Edit a file directly in GitHub**
 
-## Build & déploiement Vercel
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-```bash
-npm run build
-```
+**Use GitHub Codespaces**
 
-Déploiement : connecter le dépôt Git à Vercel ou `vercel` en CLI. Aucune configuration supplémentaire requise.
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## Structure
+## What technologies are used for this project?
 
-- `src/app/` — layout, page principale, styles globaux
-- `src/components/` — carte (MapContainer, LeafletMap), filtre (FiltreFormations), graphiques (IndicateursChart, PopulationChart)
-- `src/data/` — JSON mock (établissements, population locale) + libellés filières
-- `src/types/` — types TypeScript partagés
+This project is built with:
 
-Code modulaire, composants typés et commentés.
-# CNEAP-Hackathon
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
