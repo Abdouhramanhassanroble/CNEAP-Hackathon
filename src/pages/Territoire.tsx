@@ -19,7 +19,7 @@ const populationCommunes = [
 const Territoire = () => (
   <div className="animate-fade-in">
     <section className="max-w-6xl mx-auto px-6 pt-12 pb-4">
-      <h1 className="text-3xl tracking-tight mb-2">Carte territoriale du 2025</h1>
+      <h1 className="text-3xl tracking-tight mb-2">Carte territoriale</h1>
       <p className="text-muted-foreground mb-8" style={{ fontWeight: 300 }}>
         Implantation, zones de recrutement et densité démographique 15–19 ans
       </p>
