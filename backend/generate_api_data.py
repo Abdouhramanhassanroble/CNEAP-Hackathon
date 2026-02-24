@@ -38,7 +38,7 @@ LYCEE_DISPLAY = {
     "ANGERS AGRITEC": "Angers Agritec", "EVRON": "Evron",
     "BAZOUGES-CHATEAU GONTIER": "Bazouges-Château-Gontier", "MAYENNE": "Mayenne",
     "RUILLE SUR LOIR": "Ruillé-sur-Loir", "LA FERTE BERNARD": "La Ferté-Bernard",
-    "SABLE SUR SARTHE": "Sablé-sur-Sarthe", "LA ROCHE SUR YON": "La Roche-sur-Yon",
+    "SABLE SUR SARTHE": "Sablé-sur-Sarthe", "LA ROCHE SUR YON": "Établières",
 }
 
 # Coordonnées réelles des villes
