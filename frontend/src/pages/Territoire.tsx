@@ -12,10 +12,11 @@ const Territoire = () => {
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // API en local, fallback JSON statique en prod (Vercel n'a pas le backend)
     fetch('/api/lycees')
-      .then(r => r.json())
+      .then(r => (r.ok && r.headers.get('content-type')?.includes('json') ? r.json() : Promise.reject()))
       .then(setLycees)
-      .catch(() => setLycees([]));
+      .catch(() => fetch('/data/lycees_list.json').then(r => r.json()).then(setLycees).catch(() => setLycees([])));
   }, []);
 
   const handleClick = useCallback(async (id: string) => {
@@ -23,10 +24,19 @@ const Territoire = () => {
     setLoading(true);
     try {
       const res = await fetch(`/api/lycees/${id}`);
-      if (!res.ok) throw new Error();
-      setLyceeData(await res.json());
+      if (res.ok && res.headers.get('content-type')?.includes('json')) {
+        setLyceeData(await res.json());
+        return;
+      }
+      throw new Error();
     } catch {
-      setLyceeData(null);
+      // Fallback prod : charger lycees_data.json et extraire par id
+      try {
+        const all = await fetch('/data/lycees_data.json').then(r => r.json());
+        setLyceeData(all[id] || null);
+      } catch {
+        setLyceeData(null);
+      }
     } finally {
       setLoading(false);
       setTimeout(() => panelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);

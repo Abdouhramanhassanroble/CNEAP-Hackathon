@@ -27,7 +27,11 @@ const Accueil = () => {
   const [lyceesData, setLyceesData] = useState<Record<string, LyceeDataEntry>>({});
 
   useEffect(() => {
-    fetch('/api/lycees').then(r => r.json()).then(setLycees).catch(() => {});
+    // API en local, fallback JSON statique en prod (Vercel n'a pas le backend)
+    fetch('/api/lycees')
+      .then(r => (r.ok && r.headers.get('content-type')?.includes('json') ? r.json() : Promise.reject()))
+      .then(setLycees)
+      .catch(() => fetch('/data/lycees_list.json').then(r => r.json()).then(setLycees).catch(() => {}));
     fetch('/data/lycees_data.json').then(r => r.json()).then(setLyceesData).catch(() => {});
   }, []);
 
