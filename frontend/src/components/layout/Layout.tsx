@@ -3,9 +3,8 @@ import { Sprout } from 'lucide-react';
 
 const navItems = [
   { label: 'Accueil', path: '/' },
-  { label: 'Territoire', path: '/territoire' },
+  { label: 'Simulation IA', path: '/territoire' },
   { label: 'Établissements', path: '/etablissements' },
-  { label: 'Projections', path: '/projections' },
   { label: 'Paramètres', path: '/parametres' },
 ];
 

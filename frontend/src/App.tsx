@@ -6,7 +6,7 @@ import { Layout } from "@/components/layout/Layout";
 import Accueil from "./pages/Accueil";
 import Territoire from "./pages/Territoire";
 import Etablissements from "./pages/Etablissements";
-import Projections from "./pages/Projections";
+
 import Parametres from "./pages/Parametres";
 import NotFound from "./pages/NotFound";
 
@@ -22,7 +22,7 @@ const App = () => (
             <Route path="/" element={<Accueil />} />
             <Route path="/territoire" element={<Territoire />} />
             <Route path="/etablissements" element={<Etablissements />} />
-            <Route path="/projections" element={<Projections />} />
+
             <Route path="/parametres" element={<Parametres />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

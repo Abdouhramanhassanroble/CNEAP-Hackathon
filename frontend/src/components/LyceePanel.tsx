@@ -6,6 +6,97 @@ import {
   Tooltip, Legend, ResponsiveContainer, ReferenceLine,
 } from 'recharts';
 import { TrendingDown, TrendingUp, RotateCcw, Sparkles, Loader2, BarChart3, Target, Gauge } from 'lucide-react';
+import { loadApiConfig } from '@/pages/Parametres';
+
+function mdToHtml(md: string): string {
+  const esc = md.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const lines = esc.split('\n');
+  const out: string[] = [];
+  let inList = false;
+
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!line) {
+      if (inList) { out.push('</ul>'); inList = false; }
+      continue;
+    }
+
+    const inline = (s: string) => s
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>');
+
+    if (/^#{1,4}\s/.test(line)) {
+      if (inList) { out.push('</ul>'); inList = false; }
+      const lvl = line.match(/^(#+)/)![1].length;
+      const txt = line.replace(/^#+\s*/, '');
+      out.push(`<h${lvl}>${inline(txt)}</h${lvl}>`);
+      continue;
+    }
+
+    if (/^(SECTION|BLOC)\s/i.test(line)) {
+      if (inList) { out.push('</ul>'); inList = false; }
+      const isBloc = /^BLOC/i.test(line);
+      out.push(`<h${isBloc ? 3 : 2}>${inline(line.replace(/\s*:?\s*$/, ''))}</h${isBloc ? 3 : 2}>`);
+      continue;
+    }
+
+    if (/^(Interprétation|Risques?|Opportunités?|Recommandations?|Gains? projetés?|delta_attractivite)\s*:/i.test(line)) {
+      if (inList) { out.push('</ul>'); inList = false; }
+      const [, label] = line.match(/^([^:]+):\s*(.*)$/) || [];
+      const rest = line.slice(label.length + 1).trim();
+      out.push(`<h4>${inline(label.trim())}</h4>`);
+      if (rest) out.push(`<p>${inline(rest)}</p>`);
+      continue;
+    }
+
+    if (/^[-•]\s/.test(line) || /^\d+[.)]\s/.test(line)) {
+      if (!inList) { out.push('<ul>'); inList = true; }
+      const txt = line.replace(/^[-•]\s*/, '').replace(/^\d+[.)]\s*/, '');
+      out.push(`<li>${inline(txt)}</li>`);
+      continue;
+    }
+
+    if (/^[A-ZÀ-Ü][^.!?]{4,60}\s*:\s*$/.test(line)) {
+      if (inList) { out.push('</ul>'); inList = false; }
+      out.push(`<h4>${inline(line.replace(/\s*:\s*$/, ''))}</h4>`);
+      continue;
+    }
+
+    if (/^[A-ZÀ-Ü][^.!?]{4,60}\s*:\s*\S/.test(line)) {
+      if (inList) { out.push('</ul>'); inList = false; }
+      const [, title, body] = line.match(/^([^:]+):\s*(.+)$/) || [];
+      if (title && body) {
+        out.push(`<div class="idea"><strong>${inline(title.trim())}</strong> — ${inline(body)}</div>`);
+        continue;
+      }
+    }
+
+    if (line === '---') {
+      if (inList) { out.push('</ul>'); inList = false; }
+      out.push('<hr />');
+      continue;
+    }
+
+    if (inList) { out.push('</ul>'); inList = false; }
+    out.push(`<p>${inline(line)}</p>`);
+  }
+
+  if (inList) out.push('</ul>');
+  return out.join('');
+}
+
+const Markdown = ({ content }: { content: string }) => (
+  <div
+    className="ai-md text-sm leading-snug text-foreground"
+    dangerouslySetInnerHTML={{ __html: mdToHtml(content) }}
+    style={{
+      // @ts-expect-error CSS custom properties
+      '--c-accent': '#2D6A4F',
+      '--c-accent2': '#7C3AED',
+    }}
+  />
+);
 
 export interface LyceeSeries {
   year: number;
@@ -56,17 +147,27 @@ export const LyceePanel = ({ data }: Props) => {
   }, [initialSeries]);
 
   const runAnalysis = useCallback(async () => {
+    const cfg = loadApiConfig();
+    if (!cfg.apiKey || !cfg.apiEndpoint) {
+      setAnalysis({ diagnostic: 'Clé API non configurée. Rendez-vous dans l\'onglet Paramètres pour renseigner votre clé.', scenario: null });
+      return;
+    }
     setAnalysisLoading(true);
     try {
       const res = await fetch(`/api/lycees/${lycee.id}/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ delta_attractivite: delta / 100 }),
+        body: JSON.stringify({
+          delta_attractivite: delta / 100,
+          api_key: cfg.apiKey,
+          api_endpoint: cfg.apiEndpoint,
+          model: cfg.model,
+        }),
       });
       if (!res.ok) throw new Error();
       setAnalysis(await res.json());
     } catch {
-      setAnalysis({ diagnostic: 'Analyse indisponible. Vérifiez que le proxy IA est lancé.', scenario: null });
+      setAnalysis({ diagnostic: 'Analyse indisponible. Vérifiez votre clé API et endpoint dans Paramètres.', scenario: null });
     } finally {
       setAnalysisLoading(false);
     }
@@ -248,15 +349,19 @@ export const LyceePanel = ({ data }: Props) => {
               <h3 className="text-sm font-semibold uppercase tracking-wider text-emerald-700">Analyse IA</h3>
             </div>
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">Diagnostic</h4>
-              <div className="text-sm leading-relaxed whitespace-pre-line">{analysis.diagnostic}</div>
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                Diagnostic
+              </h4>
+              <Markdown content={analysis.diagnostic} />
             </div>
             {analysis.scenario && (
               <div className="border-t border-border pt-4">
-                <h4 className="text-xs font-semibold uppercase tracking-wide text-purple-600 mb-2">
+                <h4 className="text-xs font-semibold uppercase tracking-wide text-purple-600 mb-3 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-purple-500" />
                   Scénario ({delta > 0 ? '+' : ''}{delta}%)
                 </h4>
-                <div className="text-sm leading-relaxed whitespace-pre-line">{analysis.scenario}</div>
+                <Markdown content={analysis.scenario} />
               </div>
             )}
           </CardContent>
