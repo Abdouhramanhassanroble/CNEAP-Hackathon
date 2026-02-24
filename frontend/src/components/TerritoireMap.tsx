@@ -9,7 +9,7 @@ delete (L.Icon.Default.prototype as Record<string, unknown>)._getIconUrl;
 L.Icon.Default.mergeOptions({ iconRetinaUrl: markerIcon2x, iconUrl: markerIcon, shadowUrl: markerShadow });
 
 // GeoJSON départements avec nombre de lycées (généré par prepare_departements_geojson.js)
-const DEPARTEMENTS_GEOJSON_URL = '/data/departements_lycees.geojson';
+const DEPARTEMENTS_GEOJSON_URL = '/data/departements_lycees.geojson?v=2';
 
 export interface LyceeMarker {
   id: string;
@@ -137,7 +137,7 @@ export const TerritoireMap = ({
         labelsLayerRef.current?.bringToFront();
         markersRef.current?.bringToFront();
       })
-      .catch(() => {});
+      .catch((err) => console.warn('Chargement GeoJSON départements:', err));
 
     return () => {
       labelsLayerRef.current?.remove();
