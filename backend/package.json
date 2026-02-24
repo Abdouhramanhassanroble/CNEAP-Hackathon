@@ -4,11 +4,9 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "node index.js",
-    "prepare-geojson": "node prepare_departements_geojson.js"
+    "dev": "node index.js"
   },
   "dependencies": {
-    "express": "^5.2.1",
-    "proj4": "^2.20.2"
+    "express": "^5.2.1"
   }
 }

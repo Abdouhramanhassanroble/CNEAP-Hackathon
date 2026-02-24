@@ -9,8 +9,6 @@ const DATA_DIR = join(__dirname, '..', 'frontend', 'public', 'data');
 const lyceesList = JSON.parse(readFileSync(join(DATA_DIR, 'lycees_list.json'), 'utf-8'));
 const lyceesData = JSON.parse(readFileSync(join(DATA_DIR, 'lycees_data.json'), 'utf-8'));
 
-const PROXY_URL = process.env.OPENAI_BASE_URL || 'http://127.0.0.1:8002/v1';
-
 const app = express();
 app.use(express.json());
 
@@ -105,43 +103,75 @@ function buildAnalysisInput(id, delta) {
   return input;
 }
 
-const SYSTEM_PROMPT = `Tu es un assistant d'aide à la décision pour le réseau CNEAP Pays de la Loire.
+const SYSTEM_PROMPT = `Tu es un expert en management de crise et de transition pour les établissements scolaires agricoles.
+Tu es reconnu pour ta capacité ultra remarquable à générer des scénarios disruptifs ancrés dans la réalité locale.
+Tu t'intéresses toujours à la réalité locale du territoire d'où tu lances le scénario : tissu économique, filières agricoles du coin, identité culturelle, bassins d'emploi, partenaires potentiels.
+
 Contexte institutionnel (à utiliser, sans inventer) :
+- Réseau CNEAP Pays de la Loire, 22 lycées agricoles.
 - PDL ~3,96M hab. en 2026, croissance ~+0,35%/an.
 - Jeunes 14–23 ans ~630k (~15,9%).
 - Scolarisation 15–17 ans >95%, 18–24 ans ~49%.
 - Polarisation urbaine Nantes/Angers, enjeux ruraux Mayenne/Sarthe, accessibilité et internat clés.
-- Réseau CNEAP PDL : internat comme avantage, capacités et positionnements par site (ex: Évron capacité 250, internat 120, ratio 48%).
+- Internat = avantage compétitif du réseau CNEAP (ex: Évron capacité 250, internat 120, ratio 48%).
+
 Règles :
 1) N'invente aucun chiffre ; cite les chiffres fournis par l'API.
 2) Ne dis jamais "fermeture" ; parle de fragilité/risque si justifié.
 3) Distingue faits (données) vs hypothèses (scénarios).
+4) Intègre l'identité locale du territoire (département, bassin, filières du coin).
 Style : concis, actionnable, orienté comité de pilotage.`;
 
 const USER_PROMPT_TEMPLATE = `À partir du JSON ci-dessous, rédige :
 
 SECTION 1 — DIAGNOSTIC (baseline) :
 - 3-5 bullets de constats chiffrés (tendance, captation, démographie si fournie, projection vs seuil)
-- 1 paragraphe d'interprétation (structurel vs démographique) + 2 risques/opportunités
-- 3 recommandations N+1/N+3 (effort faible/moyen/fort)
+- 1 paragraphe d'interprétation (structurel vs démographique, contexte local du territoire) + 2 risques/opportunités
+- Intègre la réalité locale : quel département, quelles filières agricoles/économiques du coin, quel bassin de vie
 
 SECTION 2 — SCÉNARIO (uniquement si delta_attractivite != 0) :
 - Rappelle la valeur du delta_attractivite en %
 - Donne les gains 2026/2027/2028 et le gain moyen (déjà calculés)
-- Explique ce que cela signifie concrètement (leviers plausibles) : 2-3 options
-- 2 hypothèses + 2 limites
+
+Puis génère 2 blocs d'idées concrètes ancrées dans le territoire local :
+
+BLOC A — 3 IDÉES INNOVANTES FAISABLES :
+Actions réalistes, applicables rapidement sans remettre en question le fonctionnement actuel du directeur.
+Effort faible à moyen, résultats à N+1. Exemples : partenariats locaux, communication ciblée, événements terrain, internat comme levier, micro-formations.
+
+BLOC B — 3 IDÉES DISRUPTIVES :
+Actions qui changent les façons de faire, remettent en question le modèle actuel.
+Effort fort, résultats à N+2/N+3. Exemples : nouvelle filière en lien avec le tissu économique local, mutualisation inter-sites, repositionnement de l'offre, hybridation avec le numérique, ouverture à de nouveaux publics.
+
+Pour chaque idée : 1 titre court + 2-3 lignes d'explication concrète liée au territoire.
 
 Si delta_attractivite == 0 ou absent, n'affiche pas la section 2 (ou indique 'Aucun scénario appliqué').
 
 JSON :
 `;
 
-async function callLLM(analysisInput) {
-  const response = await fetch(`${PROXY_URL}/chat/completions`, {
+async function callLLM(analysisInput, apiKey, apiEndpoint, model) {
+  const isAnthropic = apiEndpoint.includes('anthropic');
+  const isAzure = apiEndpoint.includes('azure');
+
+  if (isAnthropic) {
+    return callAnthropic(analysisInput, apiKey, apiEndpoint, model);
+  }
+
+  const url = `${apiEndpoint}/chat/completions`;
+  const headers = { 'Content-Type': 'application/json' };
+
+  if (isAzure) {
+    headers['Ocp-Apim-Subscription-Key'] = apiKey;
+  } else {
+    headers['Authorization'] = `Bearer ${apiKey}`;
+  }
+
+  const response = await fetch(url, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers,
     body: JSON.stringify({
-      model: 'gpt-4o',
+      model: model || 'gpt-4o',
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: USER_PROMPT_TEMPLATE + JSON.stringify(analysisInput, null, 2) },
@@ -153,11 +183,40 @@ async function callLLM(analysisInput) {
 
   if (!response.ok) {
     const err = await response.text();
-    throw new Error(`Proxy error ${response.status}: ${err}`);
+    throw new Error(`API error ${response.status}: ${err}`);
   }
 
   const result = await response.json();
   return result.choices?.[0]?.message?.content || '';
+}
+
+async function callAnthropic(analysisInput, apiKey, apiEndpoint, model) {
+  const url = apiEndpoint.endsWith('/messages') ? apiEndpoint : `${apiEndpoint}/v1/messages`;
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+    },
+    body: JSON.stringify({
+      model: model || 'claude-sonnet-4-20250514',
+      system: SYSTEM_PROMPT,
+      messages: [
+        { role: 'user', content: USER_PROMPT_TEMPLATE + JSON.stringify(analysisInput, null, 2) },
+      ],
+      temperature: 0.3,
+      max_tokens: 1500,
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`Anthropic API error ${response.status}: ${err}`);
+  }
+
+  const result = await response.json();
+  return result.content?.[0]?.text || '';
 }
 
 function splitSections(text) {
@@ -181,6 +240,14 @@ app.post('/api/lycees/:id/analyze', async (req, res) => {
   const data = lyceesData[id];
   if (!data) return res.status(404).json({ error: 'Lycée non trouvé' });
 
+  const { api_key, api_endpoint, model } = req.body;
+  if (!api_key || !api_endpoint) {
+    return res.json({
+      diagnostic: 'Clé API ou endpoint non configuré. Allez dans Paramètres pour les renseigner.',
+      scenario: null,
+    });
+  }
+
   let delta = Number(req.body.delta_attractivite) || 0;
   delta = Math.max(-0.20, Math.min(0.40, delta));
   const deltaKey = Math.round(delta * 100);
@@ -195,14 +262,14 @@ app.post('/api/lycees/:id/analyze', async (req, res) => {
   if (!analysisInput) return res.status(404).json({ error: 'Données introuvables' });
 
   try {
-    const raw = await callLLM(analysisInput);
+    const raw = await callLLM(analysisInput, api_key, api_endpoint, model);
     const result = splitSections(raw);
     analysisCache.set(cacheKey, { result, ts: Date.now() });
     res.json(result);
   } catch (err) {
     console.error('LLM error:', err.message);
     res.json({
-      diagnostic: 'Analyse IA temporairement indisponible. Vérifiez que le proxy OpenAI est lancé (port 8002).',
+      diagnostic: `Erreur appel IA : ${err.message}. Vérifiez votre clé API et endpoint dans Paramètres.`,
       scenario: delta !== 0 ? 'Analyse du scénario indisponible.' : null,
     });
   }
