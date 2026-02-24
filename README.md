@@ -44,13 +44,3 @@ pip install -r requirements.txt
 
 ---
 
-### 3. Comment le compléter
-
-Tu peux facilement enrichir ce README avec :
-
-- une section **“Front-end”** si tu relies ce backend à un projet React/Next/Vite,
-- un **schéma d’architecture** (backend ↔ front ↔ Vercel),
-- des exemples d’**endpoints** ou de **commandes** pour regénérer les jeux de données.
-
-Si tu me dis ce que tu veux mettre en avant (plutôt data, plutôt front, plutôt infra), je peux te rédiger un README plus détaillé et orienté démo.
-
