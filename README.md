@@ -1,78 +1,56 @@
-# Welcome to your Lovable project
+## Observatoire CNEAP – Backend & données
 
-## Project info
+Projet de **hackathon** pour analyser et exposer des données sur les lycées du CNEAP (effectifs, projections, démographie, etc.).
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Le dépôt que tu vois ici contient principalement :
 
-## How can I edit this code?
+- **`backend/`** : scripts Python de préparation de données et petit serveur Node/Express (`index.js`, `proxy_server.py`).
+- **Fichiers de données** : exports Excel/CSV et graphiques générés (effectifs, population 15–19 ans, etc.).
 
-There are several ways of editing your application.
+Ce README est volontairement simple pour que tu puisses le compléter ensuite selon ce que tu montres en démo (front, notebooks, slides…).
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+### 1. Installation rapide
 
-Changes made via Lovable will be committed automatically to this repo.
+Depuis la racine du projet :
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+cd backend
 ```
 
-**Edit a file directly in GitHub**
+#### Dépendances Node (proxy / API Express)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm install
+npm run dev   # ou: npm start
+```
 
-**Use GitHub Codespaces**
+#### Dépendances Python (préparation de données)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+pip install -r requirements.txt
+```
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+### 2. Structure (résumé)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **`backend/`**
+  - `index.js` : serveur **Express** (proxy / API légère).
+  - `proxy_server.py`, `generate_api_data.py`, `extract_pop_15_19_vendee_mayenne.py`, `interpolation_pop_15_19.py`, `model_lycees.py` : scripts de traitement / interpolation / génération de données.
+  - `requirements.txt` : dépendances Python (pandas, scikit‑learn, openpyxl, matplotlib…).
+- **Fichiers `.xlsx` / `.csv` / `.png`** : données sources et graphiques produits pour l’analyse.
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### 3. Comment le compléter
 
-### CI/CD et production Vercel
+Tu peux facilement enrichir ce README avec :
 
-- **CI (GitHub Actions)** : à chaque push ou PR sur `main`/`master`, le workflow `.github/workflows/ci.yml` exécute `npm ci`, `npm run lint`, `npm run build` et `npm run test`. Si tout passe, la branche est prête pour la prod.
-- **Production Vercel** : connecte ce dépôt à [Vercel](https://vercel.com). Les déploiements se lancent automatiquement sur chaque push vers la branche de production. La config `vercel.json` indique à Vercel d’utiliser `npm run build` et le dossier `dist` (projet Vite).
+- une section **“Front-end”** si tu relies ce backend à un projet React/Next/Vite,
+- un **schéma d’architecture** (backend ↔ front ↔ Vercel),
+- des exemples d’**endpoints** ou de **commandes** pour regénérer les jeux de données.
 
-## Can I connect a custom domain to my Lovable project?
+Si tu me dis ce que tu veux mettre en avant (plutôt data, plutôt front, plutôt infra), je peux te rédiger un README plus détaillé et orienté démo.
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
