@@ -1,0 +1,1872 @@
+{
+  "ancenis": {
+    "lycee": {
+      "id": "ancenis",
+      "name": "Ancenis",
+      "departement_code": "44",
+      "lat": 47.37,
+      "lng": -1.18
+    },
+    "metrics": {
+      "pente_annuelle": 0.88,
+      "mape": 5.2,
+      "captation_2018": 0.299,
+      "captation_2025": 0.297,
+      "delta_captation_points": -0.002,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 273,
+        "baseline": 273,
+        "scenario": 273
+      },
+      {
+        "year": 2019,
+        "actual": 288,
+        "baseline": 288,
+        "scenario": 288
+      },
+      {
+        "year": 2020,
+        "actual": 287,
+        "baseline": 287,
+        "scenario": 287
+      },
+      {
+        "year": 2021,
+        "actual": 278,
+        "baseline": 278,
+        "scenario": 278
+      },
+      {
+        "year": 2022,
+        "actual": 287,
+        "baseline": 287,
+        "scenario": 287
+      },
+      {
+        "year": 2023,
+        "actual": 262,
+        "baseline": 262,
+        "scenario": 262
+      },
+      {
+        "year": 2024,
+        "actual": 288,
+        "baseline": 288,
+        "scenario": 288
+      },
+      {
+        "year": 2025,
+        "actual": 293,
+        "baseline": 293,
+        "scenario": 293
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 304,
+        "scenario": 304
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 316,
+        "scenario": 316
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 329,
+        "scenario": 329
+      }
+    ]
+  },
+  "angers_agritec": {
+    "lycee": {
+      "id": "angers_agritec",
+      "name": "Angers Agritec",
+      "departement_code": "49",
+      "lat": 47.48,
+      "lng": -0.56
+    },
+    "metrics": {
+      "pente_annuelle": 3.13,
+      "mape": 5.2,
+      "captation_2018": 0.238,
+      "captation_2025": 0.27,
+      "delta_captation_points": 0.033,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 132,
+        "baseline": 132,
+        "scenario": 132
+      },
+      {
+        "year": 2019,
+        "actual": 143,
+        "baseline": 143,
+        "scenario": 143
+      },
+      {
+        "year": 2020,
+        "actual": 160,
+        "baseline": 160,
+        "scenario": 160
+      },
+      {
+        "year": 2021,
+        "actual": 162,
+        "baseline": 162,
+        "scenario": 162
+      },
+      {
+        "year": 2022,
+        "actual": 159,
+        "baseline": 159,
+        "scenario": 159
+      },
+      {
+        "year": 2023,
+        "actual": 153,
+        "baseline": 153,
+        "scenario": 153
+      },
+      {
+        "year": 2024,
+        "actual": 157,
+        "baseline": 157,
+        "scenario": 157
+      },
+      {
+        "year": 2025,
+        "actual": 163,
+        "baseline": 163,
+        "scenario": 163
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 169,
+        "scenario": 169
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 176,
+        "scenario": 176
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 183,
+        "scenario": 183
+      }
+    ]
+  },
+  "angers_les_buissonnets": {
+    "lycee": {
+      "id": "angers_les_buissonnets",
+      "name": "Angers Buissonnets",
+      "departement_code": "49",
+      "lat": 47.47,
+      "lng": -0.55
+    },
+    "metrics": {
+      "pente_annuelle": 8.32,
+      "mape": 5.2,
+      "captation_2018": 0.592,
+      "captation_2025": 0.62,
+      "delta_captation_points": 0.028,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 329,
+        "baseline": 329,
+        "scenario": 329
+      },
+      {
+        "year": 2019,
+        "actual": 324,
+        "baseline": 324,
+        "scenario": 324
+      },
+      {
+        "year": 2020,
+        "actual": 346,
+        "baseline": 346,
+        "scenario": 346
+      },
+      {
+        "year": 2021,
+        "actual": 356,
+        "baseline": 356,
+        "scenario": 356
+      },
+      {
+        "year": 2022,
+        "actual": 359,
+        "baseline": 359,
+        "scenario": 359
+      },
+      {
+        "year": 2023,
+        "actual": 368,
+        "baseline": 368,
+        "scenario": 368
+      },
+      {
+        "year": 2024,
+        "actual": 387,
+        "baseline": 387,
+        "scenario": 387
+      },
+      {
+        "year": 2025,
+        "actual": 374,
+        "baseline": 374,
+        "scenario": 374
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 376,
+        "scenario": 376
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 379,
+        "scenario": 379
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 383,
+        "scenario": 383
+      }
+    ]
+  },
+  "bazouges_chateau_gontier": {
+    "lycee": {
+      "id": "bazouges_chateau_gontier",
+      "name": "Bazouges-Château-Gontier",
+      "departement_code": "53",
+      "lat": 47.83,
+      "lng": -0.7
+    },
+    "metrics": {
+      "pente_annuelle": 14.4,
+      "mape": 5.2,
+      "captation_2018": 0.986,
+      "captation_2025": 1.512,
+      "delta_captation_points": 0.525,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 187,
+        "baseline": 187,
+        "scenario": 187
+      },
+      {
+        "year": 2019,
+        "actual": 190,
+        "baseline": 190,
+        "scenario": 190
+      },
+      {
+        "year": 2020,
+        "actual": 205,
+        "baseline": 205,
+        "scenario": 205
+      },
+      {
+        "year": 2021,
+        "actual": 205,
+        "baseline": 205,
+        "scenario": 205
+      },
+      {
+        "year": 2022,
+        "actual": 219,
+        "baseline": 219,
+        "scenario": 219
+      },
+      {
+        "year": 2023,
+        "actual": 230,
+        "baseline": 230,
+        "scenario": 230
+      },
+      {
+        "year": 2024,
+        "actual": 256,
+        "baseline": 256,
+        "scenario": 256
+      },
+      {
+        "year": 2025,
+        "actual": 300,
+        "baseline": 300,
+        "scenario": 300
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 296,
+        "scenario": 296
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 293,
+        "scenario": 293
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 290,
+        "scenario": 290
+      }
+    ]
+  },
+  "chateaubriant": {
+    "lycee": {
+      "id": "chateaubriant",
+      "name": "Châteaubriant",
+      "departement_code": "44",
+      "lat": 47.72,
+      "lng": -1.37
+    },
+    "metrics": {
+      "pente_annuelle": 5.05,
+      "mape": 5.2,
+      "captation_2018": 0.118,
+      "captation_2025": 0.152,
+      "delta_captation_points": 0.034,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 108,
+        "baseline": 108,
+        "scenario": 108
+      },
+      {
+        "year": 2019,
+        "actual": 107,
+        "baseline": 107,
+        "scenario": 107
+      },
+      {
+        "year": 2020,
+        "actual": 119,
+        "baseline": 119,
+        "scenario": 119
+      },
+      {
+        "year": 2021,
+        "actual": 134,
+        "baseline": 134,
+        "scenario": 134
+      },
+      {
+        "year": 2022,
+        "actual": 122,
+        "baseline": 122,
+        "scenario": 122
+      },
+      {
+        "year": 2023,
+        "actual": 118,
+        "baseline": 118,
+        "scenario": 118
+      },
+      {
+        "year": 2024,
+        "actual": 136,
+        "baseline": 136,
+        "scenario": 136
+      },
+      {
+        "year": 2025,
+        "actual": 150,
+        "baseline": 150,
+        "scenario": 150
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 164,
+        "scenario": 164
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 178,
+        "scenario": 178
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 193,
+        "scenario": 193
+      }
+    ]
+  },
+  "chemille": {
+    "lycee": {
+      "id": "chemille",
+      "name": "Chemillé",
+      "departement_code": "49",
+      "lat": 47.22,
+      "lng": -0.73
+    },
+    "metrics": {
+      "pente_annuelle": 7.31,
+      "mape": 5.2,
+      "captation_2018": 0.448,
+      "captation_2025": 0.494,
+      "delta_captation_points": 0.046,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 249,
+        "baseline": 249,
+        "scenario": 249
+      },
+      {
+        "year": 2019,
+        "actual": 251,
+        "baseline": 251,
+        "scenario": 251
+      },
+      {
+        "year": 2020,
+        "actual": 260,
+        "baseline": 260,
+        "scenario": 260
+      },
+      {
+        "year": 2021,
+        "actual": 266,
+        "baseline": 266,
+        "scenario": 266
+      },
+      {
+        "year": 2022,
+        "actual": 283,
+        "baseline": 283,
+        "scenario": 283
+      },
+      {
+        "year": 2023,
+        "actual": 283,
+        "baseline": 283,
+        "scenario": 283
+      },
+      {
+        "year": 2024,
+        "actual": 288,
+        "baseline": 288,
+        "scenario": 288
+      },
+      {
+        "year": 2025,
+        "actual": 298,
+        "baseline": 298,
+        "scenario": 298
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 302,
+        "scenario": 302
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 306,
+        "scenario": 306
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 311,
+        "scenario": 311
+      }
+    ]
+  },
+  "cholet": {
+    "lycee": {
+      "id": "cholet",
+      "name": "Cholet",
+      "departement_code": "49",
+      "lat": 47.06,
+      "lng": -0.88
+    },
+    "metrics": {
+      "pente_annuelle": 19.51,
+      "mape": 5.2,
+      "captation_2018": 0.29,
+      "captation_2025": 0.468,
+      "delta_captation_points": 0.178,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 161,
+        "baseline": 161,
+        "scenario": 161
+      },
+      {
+        "year": 2019,
+        "actual": 162,
+        "baseline": 162,
+        "scenario": 162
+      },
+      {
+        "year": 2020,
+        "actual": 188,
+        "baseline": 188,
+        "scenario": 188
+      },
+      {
+        "year": 2021,
+        "actual": 234,
+        "baseline": 234,
+        "scenario": 234
+      },
+      {
+        "year": 2022,
+        "actual": 242,
+        "baseline": 242,
+        "scenario": 242
+      },
+      {
+        "year": 2023,
+        "actual": 261,
+        "baseline": 261,
+        "scenario": 261
+      },
+      {
+        "year": 2024,
+        "actual": 275,
+        "baseline": 275,
+        "scenario": 275
+      },
+      {
+        "year": 2025,
+        "actual": 282,
+        "baseline": 282,
+        "scenario": 282
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 286,
+        "scenario": 286
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 291,
+        "scenario": 291
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 296,
+        "scenario": 296
+      }
+    ]
+  },
+  "derval___blain": {
+    "lycee": {
+      "id": "derval___blain",
+      "name": "Derval-Blain",
+      "departement_code": "44",
+      "lat": 47.68,
+      "lng": -1.67
+    },
+    "metrics": {
+      "pente_annuelle": 2.02,
+      "mape": 5.2,
+      "captation_2018": 0.555,
+      "captation_2025": 0.512,
+      "delta_captation_points": -0.043,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 506,
+        "baseline": 506,
+        "scenario": 506
+      },
+      {
+        "year": 2019,
+        "actual": 461,
+        "baseline": 461,
+        "scenario": 461
+      },
+      {
+        "year": 2020,
+        "actual": 428,
+        "baseline": 428,
+        "scenario": 428
+      },
+      {
+        "year": 2021,
+        "actual": 443,
+        "baseline": 443,
+        "scenario": 443
+      },
+      {
+        "year": 2022,
+        "actual": 443,
+        "baseline": 443,
+        "scenario": 443
+      },
+      {
+        "year": 2023,
+        "actual": 437,
+        "baseline": 437,
+        "scenario": 437
+      },
+      {
+        "year": 2024,
+        "actual": 491,
+        "baseline": 491,
+        "scenario": 491
+      },
+      {
+        "year": 2025,
+        "actual": 505,
+        "baseline": 505,
+        "scenario": 505
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 513,
+        "scenario": 513
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 522,
+        "scenario": 522
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 531,
+        "scenario": 531
+      }
+    ]
+  },
+  "evron": {
+    "lycee": {
+      "id": "evron",
+      "name": "Evron",
+      "departement_code": "53",
+      "lat": 48.15,
+      "lng": -0.4
+    },
+    "metrics": {
+      "pente_annuelle": -15.96,
+      "mape": 5.2,
+      "captation_2018": 1.113,
+      "captation_2025": 0.509,
+      "delta_captation_points": -0.604,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 211,
+        "baseline": 211,
+        "scenario": 211
+      },
+      {
+        "year": 2019,
+        "actual": 199,
+        "baseline": 199,
+        "scenario": 199
+      },
+      {
+        "year": 2020,
+        "actual": 179,
+        "baseline": 179,
+        "scenario": 179
+      },
+      {
+        "year": 2021,
+        "actual": 162,
+        "baseline": 162,
+        "scenario": 162
+      },
+      {
+        "year": 2022,
+        "actual": 144,
+        "baseline": 144,
+        "scenario": 144
+      },
+      {
+        "year": 2023,
+        "actual": 133,
+        "baseline": 133,
+        "scenario": 133
+      },
+      {
+        "year": 2024,
+        "actual": 116,
+        "baseline": 116,
+        "scenario": 116
+      },
+      {
+        "year": 2025,
+        "actual": 101,
+        "baseline": 101,
+        "scenario": 101
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 100,
+        "scenario": 100
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 100,
+        "scenario": 100
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 100,
+        "scenario": 100
+      }
+    ]
+  },
+  "gorges": {
+    "lycee": {
+      "id": "gorges",
+      "name": "Gorges",
+      "departement_code": "44",
+      "lat": 47.098,
+      "lng": -1.3
+    },
+    "metrics": {
+      "pente_annuelle": 14.17,
+      "mape": 5.2,
+      "captation_2018": 0.477,
+      "captation_2025": 0.552,
+      "delta_captation_points": 0.074,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 435,
+        "baseline": 435,
+        "scenario": 435
+      },
+      {
+        "year": 2019,
+        "actual": 450,
+        "baseline": 450,
+        "scenario": 450
+      },
+      {
+        "year": 2020,
+        "actual": 469,
+        "baseline": 469,
+        "scenario": 469
+      },
+      {
+        "year": 2021,
+        "actual": 478,
+        "baseline": 478,
+        "scenario": 478
+      },
+      {
+        "year": 2022,
+        "actual": 446,
+        "baseline": 446,
+        "scenario": 446
+      },
+      {
+        "year": 2023,
+        "actual": 497,
+        "baseline": 497,
+        "scenario": 497
+      },
+      {
+        "year": 2024,
+        "actual": 525,
+        "baseline": 525,
+        "scenario": 525
+      },
+      {
+        "year": 2025,
+        "actual": 544,
+        "baseline": 544,
+        "scenario": 544
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 551,
+        "scenario": 551
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 559,
+        "scenario": 559
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 568,
+        "scenario": 568
+      }
+    ]
+  },
+  "la_ferte_bernard": {
+    "lycee": {
+      "id": "la_ferte_bernard",
+      "name": "La Ferté-Bernard",
+      "departement_code": "72",
+      "lat": 48.19,
+      "lng": 0.65
+    },
+    "metrics": {
+      "pente_annuelle": 6.5,
+      "mape": 5.2,
+      "captation_2018": 0.456,
+      "captation_2025": 0.568,
+      "delta_captation_points": 0.112,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 164,
+        "baseline": 164,
+        "scenario": 164
+      },
+      {
+        "year": 2019,
+        "actual": 162,
+        "baseline": 162,
+        "scenario": 162
+      },
+      {
+        "year": 2020,
+        "actual": 176,
+        "baseline": 176,
+        "scenario": 176
+      },
+      {
+        "year": 2021,
+        "actual": 184,
+        "baseline": 184,
+        "scenario": 184
+      },
+      {
+        "year": 2022,
+        "actual": 178,
+        "baseline": 178,
+        "scenario": 178
+      },
+      {
+        "year": 2023,
+        "actual": 190,
+        "baseline": 190,
+        "scenario": 190
+      },
+      {
+        "year": 2024,
+        "actual": 194,
+        "baseline": 194,
+        "scenario": 194
+      },
+      {
+        "year": 2025,
+        "actual": 214,
+        "baseline": 214,
+        "scenario": 214
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 215,
+        "scenario": 215
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 216,
+        "scenario": 216
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 218,
+        "scenario": 218
+      }
+    ]
+  },
+  "la_roche_sur_yon": {
+    "lycee": {
+      "id": "la_roche_sur_yon",
+      "name": "La Roche-sur-Yon",
+      "departement_code": "85",
+      "lat": 46.67,
+      "lng": -1.43
+    },
+    "metrics": {
+      "pente_annuelle": 5.19,
+      "mape": 5.2,
+      "captation_2018": 1.148,
+      "captation_2025": 1.092,
+      "delta_captation_points": -0.057,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 442,
+        "baseline": 442,
+        "scenario": 442
+      },
+      {
+        "year": 2019,
+        "actual": 457,
+        "baseline": 457,
+        "scenario": 457
+      },
+      {
+        "year": 2020,
+        "actual": 497,
+        "baseline": 497,
+        "scenario": 497
+      },
+      {
+        "year": 2021,
+        "actual": 482,
+        "baseline": 482,
+        "scenario": 482
+      },
+      {
+        "year": 2022,
+        "actual": 479,
+        "baseline": 479,
+        "scenario": 479
+      },
+      {
+        "year": 2023,
+        "actual": 494,
+        "baseline": 494,
+        "scenario": 494
+      },
+      {
+        "year": 2024,
+        "actual": 513,
+        "baseline": 513,
+        "scenario": 513
+      },
+      {
+        "year": 2025,
+        "actual": 466,
+        "baseline": 466,
+        "scenario": 466
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 464,
+        "scenario": 464
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 462,
+        "scenario": 462
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 461,
+        "scenario": 461
+      }
+    ]
+  },
+  "le_landreau": {
+    "lycee": {
+      "id": "le_landreau",
+      "name": "Le Landreau",
+      "departement_code": "44",
+      "lat": 47.19,
+      "lng": -1.27
+    },
+    "metrics": {
+      "pente_annuelle": 14.07,
+      "mape": 5.2,
+      "captation_2018": 0.73,
+      "captation_2025": 0.74,
+      "delta_captation_points": 0.01,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 666,
+        "baseline": 666,
+        "scenario": 666
+      },
+      {
+        "year": 2019,
+        "actual": 660,
+        "baseline": 660,
+        "scenario": 660
+      },
+      {
+        "year": 2020,
+        "actual": 673,
+        "baseline": 673,
+        "scenario": 673
+      },
+      {
+        "year": 2021,
+        "actual": 706,
+        "baseline": 706,
+        "scenario": 706
+      },
+      {
+        "year": 2022,
+        "actual": 729,
+        "baseline": 729,
+        "scenario": 729
+      },
+      {
+        "year": 2023,
+        "actual": 735,
+        "baseline": 735,
+        "scenario": 735
+      },
+      {
+        "year": 2024,
+        "actual": 765,
+        "baseline": 765,
+        "scenario": 765
+      },
+      {
+        "year": 2025,
+        "actual": 730,
+        "baseline": 730,
+        "scenario": 730
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 734,
+        "scenario": 734
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 739,
+        "scenario": 739
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 745,
+        "scenario": 745
+      }
+    ]
+  },
+  "le_pellerin": {
+    "lycee": {
+      "id": "le_pellerin",
+      "name": "Le Pellerin",
+      "departement_code": "44",
+      "lat": 47.2,
+      "lng": -1.76
+    },
+    "metrics": {
+      "pente_annuelle": -6.21,
+      "mape": 5.2,
+      "captation_2018": 0.376,
+      "captation_2025": 0.289,
+      "delta_captation_points": -0.087,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 343,
+        "baseline": 343,
+        "scenario": 343
+      },
+      {
+        "year": 2019,
+        "actual": 317,
+        "baseline": 317,
+        "scenario": 317
+      },
+      {
+        "year": 2020,
+        "actual": 298,
+        "baseline": 298,
+        "scenario": 298
+      },
+      {
+        "year": 2021,
+        "actual": 330,
+        "baseline": 330,
+        "scenario": 330
+      },
+      {
+        "year": 2022,
+        "actual": 339,
+        "baseline": 339,
+        "scenario": 339
+      },
+      {
+        "year": 2023,
+        "actual": 318,
+        "baseline": 318,
+        "scenario": 318
+      },
+      {
+        "year": 2024,
+        "actual": 280,
+        "baseline": 280,
+        "scenario": 280
+      },
+      {
+        "year": 2025,
+        "actual": 285,
+        "baseline": 285,
+        "scenario": 285
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 296,
+        "scenario": 296
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 308,
+        "scenario": 308
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 321,
+        "scenario": 321
+      }
+    ]
+  },
+  "les_ponts_de_ce": {
+    "lycee": {
+      "id": "les_ponts_de_ce",
+      "name": "Les Ponts-de-Cé",
+      "departement_code": "49",
+      "lat": 47.43,
+      "lng": -0.52
+    },
+    "metrics": {
+      "pente_annuelle": -2.76,
+      "mape": 5.2,
+      "captation_2018": 0.988,
+      "captation_2025": 0.841,
+      "delta_captation_points": -0.148,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 549,
+        "baseline": 549,
+        "scenario": 549
+      },
+      {
+        "year": 2019,
+        "actual": 547,
+        "baseline": 547,
+        "scenario": 547
+      },
+      {
+        "year": 2020,
+        "actual": 472,
+        "baseline": 472,
+        "scenario": 472
+      },
+      {
+        "year": 2021,
+        "actual": 485,
+        "baseline": 485,
+        "scenario": 485
+      },
+      {
+        "year": 2022,
+        "actual": 488,
+        "baseline": 488,
+        "scenario": 488
+      },
+      {
+        "year": 2023,
+        "actual": 520,
+        "baseline": 520,
+        "scenario": 520
+      },
+      {
+        "year": 2024,
+        "actual": 530,
+        "baseline": 530,
+        "scenario": 530
+      },
+      {
+        "year": 2025,
+        "actual": 507,
+        "baseline": 507,
+        "scenario": 507
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 507,
+        "scenario": 507
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 508,
+        "scenario": 508
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 510,
+        "scenario": 510
+      }
+    ]
+  },
+  "machecoul": {
+    "lycee": {
+      "id": "machecoul",
+      "name": "Machecoul",
+      "departement_code": "44",
+      "lat": 46.99,
+      "lng": -1.82
+    },
+    "metrics": {
+      "pente_annuelle": 11.19,
+      "mape": 5.2,
+      "captation_2018": 0.287,
+      "captation_2025": 0.351,
+      "delta_captation_points": 0.063,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 262,
+        "baseline": 262,
+        "scenario": 262
+      },
+      {
+        "year": 2019,
+        "actual": 280,
+        "baseline": 280,
+        "scenario": 280
+      },
+      {
+        "year": 2020,
+        "actual": 304,
+        "baseline": 304,
+        "scenario": 304
+      },
+      {
+        "year": 2021,
+        "actual": 301,
+        "baseline": 301,
+        "scenario": 301
+      },
+      {
+        "year": 2022,
+        "actual": 313,
+        "baseline": 313,
+        "scenario": 313
+      },
+      {
+        "year": 2023,
+        "actual": 309,
+        "baseline": 309,
+        "scenario": 309
+      },
+      {
+        "year": 2024,
+        "actual": 345,
+        "baseline": 345,
+        "scenario": 345
+      },
+      {
+        "year": 2025,
+        "actual": 346,
+        "baseline": 346,
+        "scenario": 346
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 356,
+        "scenario": 356
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 367,
+        "scenario": 367
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 379,
+        "scenario": 379
+      }
+    ]
+  },
+  "mayenne": {
+    "lycee": {
+      "id": "mayenne",
+      "name": "Mayenne",
+      "departement_code": "53",
+      "lat": 48.3,
+      "lng": -0.62
+    },
+    "metrics": {
+      "pente_annuelle": -8.11,
+      "mape": 5.2,
+      "captation_2018": 2.431,
+      "captation_2025": 2.116,
+      "delta_captation_points": -0.315,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 461,
+        "baseline": 461,
+        "scenario": 461
+      },
+      {
+        "year": 2019,
+        "actual": 461,
+        "baseline": 461,
+        "scenario": 461
+      },
+      {
+        "year": 2020,
+        "actual": 448,
+        "baseline": 448,
+        "scenario": 448
+      },
+      {
+        "year": 2021,
+        "actual": 421,
+        "baseline": 421,
+        "scenario": 421
+      },
+      {
+        "year": 2022,
+        "actual": 440,
+        "baseline": 440,
+        "scenario": 440
+      },
+      {
+        "year": 2023,
+        "actual": 397,
+        "baseline": 397,
+        "scenario": 397
+      },
+      {
+        "year": 2024,
+        "actual": 409,
+        "baseline": 409,
+        "scenario": 409
+      },
+      {
+        "year": 2025,
+        "actual": 420,
+        "baseline": 420,
+        "scenario": 420
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 414,
+        "scenario": 414
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 409,
+        "scenario": 409
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 404,
+        "scenario": 404
+      }
+    ]
+  },
+  "nort_sur_erdre": {
+    "lycee": {
+      "id": "nort_sur_erdre",
+      "name": "Nort-sur-Erdre",
+      "departement_code": "44",
+      "lat": 47.44,
+      "lng": -1.5
+    },
+    "metrics": {
+      "pente_annuelle": 0.87,
+      "mape": 5.2,
+      "captation_2018": 0.24,
+      "captation_2025": 0.245,
+      "delta_captation_points": 0.005,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 219,
+        "baseline": 219,
+        "scenario": 219
+      },
+      {
+        "year": 2019,
+        "actual": 233,
+        "baseline": 233,
+        "scenario": 233
+      },
+      {
+        "year": 2020,
+        "actual": 236,
+        "baseline": 236,
+        "scenario": 236
+      },
+      {
+        "year": 2021,
+        "actual": 237,
+        "baseline": 237,
+        "scenario": 237
+      },
+      {
+        "year": 2022,
+        "actual": 230,
+        "baseline": 230,
+        "scenario": 230
+      },
+      {
+        "year": 2023,
+        "actual": 224,
+        "baseline": 224,
+        "scenario": 224
+      },
+      {
+        "year": 2024,
+        "actual": 224,
+        "baseline": 224,
+        "scenario": 224
+      },
+      {
+        "year": 2025,
+        "actual": 242,
+        "baseline": 242,
+        "scenario": 242
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 254,
+        "scenario": 254
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 267,
+        "scenario": 267
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 280,
+        "scenario": 280
+      }
+    ]
+  },
+  "ruille_sur_loir": {
+    "lycee": {
+      "id": "ruille_sur_loir",
+      "name": "Ruillé-sur-Loir",
+      "departement_code": "72",
+      "lat": 47.74,
+      "lng": 0.55
+    },
+    "metrics": {
+      "pente_annuelle": -4.69,
+      "mape": 5.2,
+      "captation_2018": 0.481,
+      "captation_2025": 0.342,
+      "delta_captation_points": -0.139,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 173,
+        "baseline": 173,
+        "scenario": 173
+      },
+      {
+        "year": 2019,
+        "actual": 141,
+        "baseline": 141,
+        "scenario": 141
+      },
+      {
+        "year": 2020,
+        "actual": 117,
+        "baseline": 117,
+        "scenario": 117
+      },
+      {
+        "year": 2021,
+        "actual": 119,
+        "baseline": 119,
+        "scenario": 119
+      },
+      {
+        "year": 2022,
+        "actual": 107,
+        "baseline": 107,
+        "scenario": 107
+      },
+      {
+        "year": 2023,
+        "actual": 129,
+        "baseline": 129,
+        "scenario": 129
+      },
+      {
+        "year": 2024,
+        "actual": 119,
+        "baseline": 119,
+        "scenario": 119
+      },
+      {
+        "year": 2025,
+        "actual": 129,
+        "baseline": 129,
+        "scenario": 129
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 131,
+        "scenario": 131
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 134,
+        "scenario": 134
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 137,
+        "scenario": 137
+      }
+    ]
+  },
+  "sable_sur_sarthe": {
+    "lycee": {
+      "id": "sable_sur_sarthe",
+      "name": "Sablé-sur-Sarthe",
+      "departement_code": "72",
+      "lat": 47.84,
+      "lng": -0.33
+    },
+    "metrics": {
+      "pente_annuelle": -22.17,
+      "mape": 5.2,
+      "captation_2018": 1.324,
+      "captation_2025": 0.82,
+      "delta_captation_points": -0.504,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 476,
+        "baseline": 476,
+        "scenario": 476
+      },
+      {
+        "year": 2019,
+        "actual": 411,
+        "baseline": 411,
+        "scenario": 411
+      },
+      {
+        "year": 2020,
+        "actual": 364,
+        "baseline": 364,
+        "scenario": 364
+      },
+      {
+        "year": 2021,
+        "actual": 352,
+        "baseline": 352,
+        "scenario": 352
+      },
+      {
+        "year": 2022,
+        "actual": 323,
+        "baseline": 323,
+        "scenario": 323
+      },
+      {
+        "year": 2023,
+        "actual": 326,
+        "baseline": 326,
+        "scenario": 326
+      },
+      {
+        "year": 2024,
+        "actual": 301,
+        "baseline": 301,
+        "scenario": 301
+      },
+      {
+        "year": 2025,
+        "actual": 309,
+        "baseline": 309,
+        "scenario": 309
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 308,
+        "scenario": 308
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 308,
+        "scenario": 308
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 309,
+        "scenario": 309
+      }
+    ]
+  },
+  "saint_gildas_des_bois": {
+    "lycee": {
+      "id": "saint_gildas_des_bois",
+      "name": "Saint-Gildas-des-Bois",
+      "departement_code": "44",
+      "lat": 47.515,
+      "lng": -1.98
+    },
+    "metrics": {
+      "pente_annuelle": 9.57,
+      "mape": 5.2,
+      "captation_2018": 0.33,
+      "captation_2025": 0.385,
+      "delta_captation_points": 0.055,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 301,
+        "baseline": 301,
+        "scenario": 301
+      },
+      {
+        "year": 2019,
+        "actual": 311,
+        "baseline": 311,
+        "scenario": 311
+      },
+      {
+        "year": 2020,
+        "actual": 308,
+        "baseline": 308,
+        "scenario": 308
+      },
+      {
+        "year": 2021,
+        "actual": 313,
+        "baseline": 313,
+        "scenario": 313
+      },
+      {
+        "year": 2022,
+        "actual": 312,
+        "baseline": 312,
+        "scenario": 312
+      },
+      {
+        "year": 2023,
+        "actual": 322,
+        "baseline": 322,
+        "scenario": 322
+      },
+      {
+        "year": 2024,
+        "actual": 353,
+        "baseline": 353,
+        "scenario": 353
+      },
+      {
+        "year": 2025,
+        "actual": 380,
+        "baseline": 380,
+        "scenario": 380
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 390,
+        "scenario": 390
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 401,
+        "scenario": 401
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 412,
+        "scenario": 412
+      }
+    ]
+  },
+  "saint_molf": {
+    "lycee": {
+      "id": "saint_molf",
+      "name": "Saint-Molf",
+      "departement_code": "44",
+      "lat": 47.38,
+      "lng": -2.42
+    },
+    "metrics": {
+      "pente_annuelle": -0.88,
+      "mape": 5.2,
+      "captation_2018": 0.219,
+      "captation_2025": 0.204,
+      "delta_captation_points": -0.016,
+      "seuil_critique": 50
+    },
+    "series": [
+      {
+        "year": 2018,
+        "actual": 200,
+        "baseline": 200,
+        "scenario": 200
+      },
+      {
+        "year": 2019,
+        "actual": 204,
+        "baseline": 204,
+        "scenario": 204
+      },
+      {
+        "year": 2020,
+        "actual": 191,
+        "baseline": 191,
+        "scenario": 191
+      },
+      {
+        "year": 2021,
+        "actual": 168,
+        "baseline": 168,
+        "scenario": 168
+      },
+      {
+        "year": 2022,
+        "actual": 153,
+        "baseline": 153,
+        "scenario": 153
+      },
+      {
+        "year": 2023,
+        "actual": 189,
+        "baseline": 189,
+        "scenario": 189
+      },
+      {
+        "year": 2024,
+        "actual": 192,
+        "baseline": 192,
+        "scenario": 192
+      },
+      {
+        "year": 2025,
+        "actual": 201,
+        "baseline": 201,
+        "scenario": 201
+      },
+      {
+        "year": 2026,
+        "actual": null,
+        "baseline": 214,
+        "scenario": 214
+      },
+      {
+        "year": 2027,
+        "actual": null,
+        "baseline": 227,
+        "scenario": 227
+      },
+      {
+        "year": 2028,
+        "actual": null,
+        "baseline": 241,
+        "scenario": 241
+      }
+    ]
+  }
+}
