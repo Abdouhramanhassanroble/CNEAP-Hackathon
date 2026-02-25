@@ -17,16 +17,18 @@ import matplotlib.pyplot as plt
 
 # Chemins
 BASE = Path(__file__).parent.parent
-POP_CSV = BASE / "pop_15_19_interpolee.csv"
+DATA_DIR = BASE / "data"
+IMAGES_DIR = BASE / "images"
+POP_CSV = DATA_DIR / "pop_15_19_interpolee.csv"
 
 
 def _find_evolution_csv() -> Path:
     """Recherche le fichier CSV des effectifs (nom peut varier selon encodage)."""
-    for f in BASE.glob("*evolution*Feuil1*.csv"):
+    for f in DATA_DIR.glob("*evolution*Feuil1*.csv"):
         return f
-    for f in BASE.glob("*effectif*2025*.csv"):
+    for f in DATA_DIR.glob("*effectif*2025*.csv"):
         return f
-    return BASE / "evolution effectif de 2018 à 2025(1).xlsx - Feuil1.csv"
+    return DATA_DIR / "evolution effectif de 2018 à 2025(1).xlsx - Feuil1.csv"
 
 # Mapping lycée → département
 LYCEE_DEP = {"EVRON": "53", "LA ROCHE SUR YON": "85"}
@@ -407,7 +409,7 @@ def plot_effectifs_avec_projection(
     ax.grid(True, alpha=0.3)
     ax.set_xticks(range(2018, 2029))
     plt.tight_layout()
-    plt.savefig(BASE / "effectifs_2018_2028.png", dpi=120, bbox_inches="tight")
+    plt.savefig(IMAGES_DIR / "effectifs_2018_2028.png", dpi=120, bbox_inches="tight")
     plt.close()
 
 
@@ -421,7 +423,7 @@ def main() -> None:
 
     EVOLUTION_CSV = _find_evolution_csv()
     if not EVOLUTION_CSV.exists():
-        print(f"ERREUR: fichier effectifs introuvable dans {BASE}")
+        print(f"ERREUR: fichier effectifs introuvable dans {DATA_DIR}")
         return
     print(f"  Effectifs: {EVOLUTION_CSV.name}")
     if not POP_CSV.exists():
@@ -443,13 +445,13 @@ def main() -> None:
     plot_effectifs(df_full, axes[0])
     plot_taux_captation(df_full, axes[1])
     plt.tight_layout()
-    plt.savefig(BASE / "effectifs_et_taux.png", dpi=120, bbox_inches="tight")
+    plt.savefig(IMAGES_DIR / "effectifs_et_taux.png", dpi=120, bbox_inches="tight")
     plt.close()
 
     fig2, ax2 = plt.subplots(figsize=(9, 5))
     plot_pop_par_departement(pop, ax2)
     plt.tight_layout()
-    plt.savefig(BASE / "pop_15_19_dep.png", dpi=120, bbox_inches="tight")
+    plt.savefig(IMAGES_DIR / "pop_15_19_dep.png", dpi=120, bbox_inches="tight")
     plt.close()
 
     # C) Indicateurs

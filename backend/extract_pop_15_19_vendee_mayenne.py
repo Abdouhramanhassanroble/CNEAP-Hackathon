@@ -16,7 +16,7 @@ import pandas as pd
 from pathlib import Path
 
 # Configuration
-DATA_DIR = Path(__file__).parent.parent
+DATA_DIR = Path(__file__).parent.parent / "data"
 FICHIER_EXCEL = DATA_DIR / "pop-sexe-age-quinquennal6822.xlsx"
 OUTPUT_CSV = DATA_DIR / "pop_15_19_tous_lycees_2016_2022.csv"
 OUTPUT_EXCEL = DATA_DIR / "pop_15_19_tous_lycees_2016_2022.xlsx"

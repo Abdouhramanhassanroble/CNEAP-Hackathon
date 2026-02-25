@@ -12,7 +12,8 @@ from pathlib import Path
 from sklearn.linear_model import Ridge
 
 BASE = Path(__file__).parent.parent
-POP_CSV = BASE / "pop_15_19_interpolee.csv"
+DATA_DIR = BASE / "data"
+POP_CSV = DATA_DIR / "pop_15_19_interpolee.csv"
 OUTPUT_DIR = BASE / "frontend" / "public" / "data"
 
 # Mapping lycée (clé CSV uppercase) → département
@@ -60,9 +61,9 @@ DEP_NAMES = {"44": "Loire-Atlantique", "49": "Maine-et-Loire", "53": "Mayenne", 
 
 
 def find_evolution_csv() -> Path:
-    for f in BASE.glob("*evolution*Feuil1*.csv"):
+    for f in DATA_DIR.glob("*evolution*Feuil1*.csv"):
         return f
-    return BASE / "evolution effectif de 2018 à 2025(1).xlsx - Feuil1.csv"
+    return DATA_DIR / "evolution effectif de 2018 à 2025(1).xlsx - Feuil1.csv"
 
 
 def load_all_effectifs(path: Path) -> pd.DataFrame:

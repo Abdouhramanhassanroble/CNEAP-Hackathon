@@ -15,7 +15,7 @@ import pandas as pd
 from pathlib import Path
 
 # Fichier source (données 2016 et 2022) - tous les départements des lycées
-DATA_DIR = Path(__file__).parent.parent
+DATA_DIR = Path(__file__).parent.parent / "data"
 INPUT_CSV = DATA_DIR / "pop_15_19_tous_lycees_2016_2022.csv"
 OUTPUT_CSV = DATA_DIR / "pop_15_19_interpolee.csv"
 OUTPUT_EXCEL = DATA_DIR / "pop_15_19_interpolee.xlsx"
